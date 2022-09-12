@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clFragmentFeed"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FeedFragment" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintBottom_toTopOf="@id/footerAppBar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/card_recipe" />
+
+    <TextView
+        android:id="@+id/empty_view_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|end"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="@color/cardview_shadow_start_color"
+        android:visibility="gone"
+        android:text="@string/no_recipes"
+        tools:text="@string/no_recipes"
+        app:layout_constraintBottom_toTopOf="@id/footerAppBar">
+    </TextView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="68dp"
+        android:contentDescription="@string/add_recipe"
+        app:layout_constraintBottom_toTopOf="@id/footerAppBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_24dp" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/footerAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="BottomAppBar,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/footerList"
+        style="@style/Widget.AppTheme.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        app:iconGravity="top"
+        android:text="@string/menu_all_list"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_view_list_24dp"
+        app:layout_constraintTop_toTopOf="@id/footerAppBar"
+        app:layout_constraintBottom_toBottomOf="@id/footerAppBar"
+        app:layout_constraintStart_toStartOf="@id/footerAppBar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/footerMyRecipes"
+        style="@style/Widget.AppTheme.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        app:iconGravity="top"
+        android:text="@string/menu_my_list"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_person_24dp"
+        app:layout_constraintTop_toTopOf="@id/footerAppBar"
+        app:layout_constraintBottom_toBottomOf="@id/footerAppBar"
+        app:layout_constraintStart_toStartOf="@id/footerAppBar"
+        app:layout_constraintEnd_toEndOf="@id/footerAppBar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/footerFavorite"
+        style="@style/Widget.AppTheme.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:layout_marginEnd="@dimen/common_spacing"
+        app:iconGravity="top"
+        android:text="@string/menu_favorites"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_star_28dp"
+        app:layout_constraintTop_toTopOf="@id/footerAppBar"
+        app:layout_constraintBottom_toBottomOf="@id/footerAppBar"
+        app:layout_constraintEnd_toEndOf="@id/footerAppBar" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/groupSearch"
+        app:layout_constraintBottom_toBottomOf="@id/groupCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible"
+        tools:ignore="BottomAppBar" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupSearch"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="recipeSearchText,search_text,clear_text"
+        app:layout_constraintTop_toTopOf="@id/topAppBar"
+        app:layout_constraintBottom_toBottomOf="@id/topAppBar"
+        app:layout_constraintStart_toStartOf="@id/topAppBar"
+        app:layout_constraintEnd_toEndOf="@id/topAppBar"
+        tools:visibility="visible">
+    </androidx.constraintlayout.widget.Group>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupCategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="recipeCategory"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintBottom_toBottomOf="@id/topAppBar"
+        app:layout_constraintStart_toStartOf="@id/topAppBar"
+        app:layout_constraintEnd_toEndOf="@id/topAppBar"
+        tools:visibility="gone">
+    </androidx.constraintlayout.widget.Group>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/recipeSearchText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginStart="@dimen/convergence_spacing"
+        android:padding="12dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="@id/groupSearch"
+        app:layout_constraintStart_toStartOf="@id/groupSearch"
+        app:layout_constraintBottom_toBottomOf="@id/clear_text"
+        app:layout_constraintEnd_toStartOf="@id/search_text"
+        tools:text="Searching text some several times through"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_text"
+        android:layout_width="54dp"
+        android:layout_height="0dp"
+        app:icon="@drawable/ic_search_24dp"
+        app:layout_constraintTop_toTopOf="@id/groupSearch"
+        app:layout_constraintBottom_toBottomOf="@id/groupSearch"
+        app:layout_constraintEnd_toStartOf="@id/clear_text"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clear_text"
+        android:layout_width="56dp"
+        android:layout_height="0dp"
+        app:icon="@drawable/ic_cancel_36dp"
+        app:layout_constraintTop_toTopOf="@id/groupSearch"
+        app:layout_constraintBottom_toBottomOf="@id/groupSearch"
+        app:layout_constraintEnd_toEndOf="@id/groupSearch"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipeCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:clickable="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/topAppBar"
+        app:layout_constraintStart_toStartOf="@id/topAppBar"
+        app:layout_constraintEnd_toEndOf="@id/topAppBar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/category_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/msvRecipe"
+    tools:context=".activity.RecipeCardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="@dimen/common_spacing"
+        android:background="@drawable/eggs"
+        android:padding="@dimen/common_spacing">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menu"
+            style="@style/Widget.AppTheme.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/ic_options_24dp"
+            app:iconSize="32dp"
+            app:iconTint="@color/cardview_dark_background"
+            app:layout_constraintBottom_toBottomOf="@id/category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/category"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_shadow_start_color"
+            android:singleLine="false"
+            android:textColor="@color/purple_700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Russian" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:textColor="@color/teal_200"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/favorite"
+            app:layout_constraintStart_toStartOf="@id/category"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Recipe No.1 \nName of recipe" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_spacing"
+            android:singleLine="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/name"
+            tools:text="From Me" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/favorite"
+            style="@style/Widget.AppTheme.LikeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            app:icon="@drawable/ic_favorite_48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:checkable="true"
+            tools:text="like" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stageContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:visibility="visible"
+        tools:listitem="@layout/stage_item">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/empty_view_stage"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="bottom|center"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="@color/cardview_shadow_start_color"
+        android:visibility="gone"
+        android:text="@string/no_stages"
+        tools:text="@string/no_stages">
+    </TextView>
+
+</com.google.android.material.card.MaterialCardView>
