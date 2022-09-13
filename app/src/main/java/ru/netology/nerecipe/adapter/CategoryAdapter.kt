@@ -16,14 +16,13 @@ class CategoryAdapter(
 ) : RecyclerView.Adapter<CategoryViewHolder>() {
 
     val listCategory = listOf(
-        Category(0, "All", "Все категории"),
-        Category(1, "Eurasian", "Европейская"),
-        Category(2, "Asian", "Азиатская"),
-        Category(3, "Panasian", "Паназиатская"),
-        Category(4, "Eastern", "Восточная"),
-        Category(5, "American", "Американская"),
-        Category(6, "Russian", "Русская"),
-        Category(7, "Mediterranean", "Средиземноморская")
+        Category(0, "Eurasian", "Европейская"),
+        Category(1, "Asian", "Азиатская"),
+        Category(2, "Panasian", "Паназиатская"),
+        Category(3, "Eastern", "Восточная"),
+        Category(4, "American", "Американская"),
+        Category(5, "Russian", "Русская"),
+        Category(6, "Mediterranean", "Средиземноморская")
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {

@@ -32,7 +32,6 @@
     <string name="no_stages">No any stages created</string>
 
     <string-array name="cat_names">
-        <item>All</item>
         <item>Eurasian</item>
         <item>Asian</item>
         <item>Panasian</item>

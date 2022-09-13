@@ -33,7 +33,6 @@
     <string name="no_stages">Нет данных об этапах приготовления</string>
 
     <string-array name="cat_names">
-        <item>Все категории</item>
         <item>Европейская</item>
         <item>Азиатская</item>
         <item>Паназиатская</item>

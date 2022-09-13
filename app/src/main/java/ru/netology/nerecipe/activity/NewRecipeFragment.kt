@@ -95,7 +95,7 @@ class NewRecipeFragment : Fragment() {
             //?: binding.nameEdit.setText("name").toString()
 
         arguments?.catArg?.let(binding.catEdit::setText)
-            ?: binding.catEdit.setText("Select_Recipe_Category")
+            ?: binding.catEdit.setText("Выбор категории")
 
         arguments?.textArg?.let(binding.edit::setText)
             ?: binding.edit.setText(
@@ -196,8 +196,7 @@ class NewRecipeFragment : Fragment() {
             if (
                 binding.authorEdit.text.isNullOrBlank() ||
                 binding.nameEdit.text.isNullOrBlank() ||
-                cat == "Select_Recipe_Category" ||
-                cat == categoryAdapter.listCategory[0].titleRu.trim()
+                cat == "Выбор категории"
             ) {
                 Snackbar.make(
                     binding.root, R.string.error_empty_content,

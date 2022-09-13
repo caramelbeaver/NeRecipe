@@ -26,12 +26,12 @@
         android:checked="false"
         android:paddingStart="@dimen/common_spacing"
         android:paddingEnd="@dimen/common_spacing"
-        android:text="Все категории"
+        android:text="Европейская"
         android:focusable="true"
         android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Все категории"/>
+        tools:text="Европейская"/>
 
     </androidx.cardview.widget.CardView>
 

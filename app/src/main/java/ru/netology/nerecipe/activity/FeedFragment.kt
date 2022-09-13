@@ -46,7 +46,7 @@ class FeedFragment : Fragment() {
 
         val categoryAdapter = CategoryAdapter(object : OnInteractionCatListener {
             override fun onClicked(category: Category) {
-                if (category.selected && category.titleRu != "Все категории")
+                if (category.selected && category.titleRu != "Европейская")
                     viewModel.getByFilterOnCat(category.titleRu.trim())
                 else
                     viewModel.getByFilter("", "", "", false)
